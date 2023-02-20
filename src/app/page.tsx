@@ -36,7 +36,7 @@ export default function Home() {
 
   return (
     <main className="bg-zinc-700 flex w-full h-full lg:h-[100vh]">
-      <div className="bg-[#100E1D] text-zinc-100 flex-col  p-8 w-full lg:w-[1200px] m-auto">
+      <div className="bg-[#100E1D] text-zinc-100 flex-col p-8 w-full lg:w-[1200px] m-auto shadow-2xl shadow-zinc-900 rounded-lg">
         <div className="flex gap-20 items-center ml-2">
           <form
             className="flex gap-2"

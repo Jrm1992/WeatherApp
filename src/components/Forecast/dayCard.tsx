@@ -3,6 +3,8 @@ import React from 'react';
 
 import { ICondition, IDay } from '.';
 
+import dayjs from 'dayjs';
+
 interface IDayCard {
   Day: string;
   Condition: ICondition;
@@ -10,9 +12,17 @@ interface IDayCard {
 }
 
 export default function DayCard({ Day, Condition, Temp }: IDayCard) {
+  const parseDate = dayjs(Day);
+  const dayAndMonth = parseDate.format('ddd, DD MMM');
+
+  const today = dayjs().startOf('day').toDate();
+  const isCurrentDay = dayjs(Day).isSame(today);
+
   return (
-    <div className="flex flex-col justify-between max-w-[120px] h-[177px] bg-[#1E213A] p-2 rounded-lg m-auto">
-      <span className="text-base text-[#E7E7EB]">{Day}</span>
+    <div className="flex flex-col justify-between w-full max-w-[100px] h-[177px] bg-[#1E213A] p-2 rounded-lg m-auto">
+      <span className="text-sm text-center text-[#E7E7EB]">
+        {isCurrentDay ? 'Today' : dayAndMonth}
+      </span>
       <div className="flex justify-center items-center">
         <Image
           src={`http:${Condition.icon}`}
