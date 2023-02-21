@@ -22,7 +22,7 @@ export default function useGetWeatherData() {
     setLocation(currentLocation);
   }
 
-  function setThisLocation(e: FormEvent<HTMLFormElement>) {
+  function setThisLocation(e: FormEvent<HTMLFormElement> | any) {
     e.preventDefault();
     setLocation(e.target[0].value);
     e.target[0].value = '';
