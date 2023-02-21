@@ -30,9 +30,14 @@ export default function Today({ TodayData }: ITodayData) {
           />
         )}
       </div>
-      <div className="text-8xl flex justify-center">
-        <span className="text-9xl">{TodayData?.current.temp_c}</span>
-        °C
+      <div className="text-8xl flex flex-col items-center justify-center">
+        <span className="text-9xl">
+          {TodayData?.current.temp_c.toFixed(0)}
+          <span className="text-6xl">°C</span>
+        </span>
+        <span className="text-sm mt-4">
+          Real feel: {TodayData?.current.feelslike_c.toFixed(0)}°C
+        </span>
       </div>
       <div className="font-bold text-4xl flex justify-center">
         {TodayData?.current.condition.text}

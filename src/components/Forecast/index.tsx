@@ -92,7 +92,7 @@ export interface Condition3 {
   code: number;
 }
 
-export interface Hour {
+export interface IHour {
   time_epoch: number;
   time: string;
   temp_c: number;
@@ -133,11 +133,31 @@ export interface Forecastday {
   date_epoch: number;
   day: IDay;
   astro: Astro;
-  hour: Hour[];
+  hour: IHour[];
 }
 
 export interface Forecast {
   forecastday: Forecastday[];
+}
+
+export interface IAlerts {
+  alert: IAlert[];
+}
+
+export interface IAlert {
+  headline: string;
+  msgtype: string;
+  severity: string;
+  urgency: string;
+  areas: string;
+  category: string;
+  certainty: string;
+  event: string;
+  note: string;
+  effective: string;
+  expires: string;
+  desc: string;
+  instruction: string;
 }
 
 export interface IForecast {
@@ -146,6 +166,7 @@ export interface IForecast {
         location: ILocation;
         current: ICurrent;
         forecast: Forecast;
+        alerts: IAlerts;
       }
     | undefined;
 }
@@ -168,15 +189,15 @@ export default function Forecast({ Forecast }: IForecast) {
       </div>
       <div>
         <span>Today’s Hightlights</span>
-        <div className="flex gap-4 lg:flex-row flex-col">
-          <div className="flex flex-col items-center mt-8 bg-[#1E213A] rounded-lg w-[332px] h-52 justify-between p-6 text-slate-50">
+        <div className="flex gap-10 lg:flex-row flex-col">
+          <div className="flex flex-col items-center mt-8 bg-[#1E213A] rounded-lg w-full max-w-[400px] h-52 justify-between p-6 text-slate-50">
             <span>Wind status</span>
             <span className="text-7xl">
               {Forecast?.current.wind_kph} <span className="text-4xl">kph</span>
             </span>
             <span>{Forecast?.current.wind_dir}</span>
           </div>
-          <div className="flex flex-col items-center mt-8 bg-[#1E213A] rounded-lg w-[332px] h-52 justify-between p-6 text-slate-50">
+          <div className="flex flex-col items-center mt-8 bg-[#1E213A] rounded-lg w-full max-w-[400px] h-52 justify-between p-6 text-slate-50">
             <span>Humidity</span>
             <span className="text-7xl">
               {Forecast?.current.humidity}
@@ -190,14 +211,14 @@ export default function Forecast({ Forecast }: IForecast) {
             </div>
           </div>
         </div>
-        <div className="flex gap-4 lg:flex-row flex-col">
-          <div className="flex flex-col items-center mt-8 bg-[#1E213A] rounded-lg w-[332px] h-40 justify-between p-6 text-slate-50">
+        <div className="flex gap-10 lg:flex-row flex-col">
+          <div className="flex flex-col items-center mt-8 bg-[#1E213A] rounded-lg w-full max-w-[400px] h-40 justify-between p-6 text-slate-50">
             <span>Visibility</span>
             <span className="text-6xl">
               {Forecast?.current.vis_km} <span className="text-4xl">km</span>
             </span>
           </div>
-          <div className="flex flex-col items-center mt-8 bg-[#1E213A] rounded-lg w-[332px] h-40 justify-between p-6 text-slate-50">
+          <div className="flex flex-col items-center mt-8 bg-[#1E213A] rounded-lg w-full max-w-[400px] h-40 justify-between p-6 text-slate-50">
             <span>Air Pressure</span>
             <span className="text-6xl">
               {Forecast?.current.pressure_mb}{' '}

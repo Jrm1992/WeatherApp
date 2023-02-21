@@ -4,6 +4,7 @@ import React from 'react';
 import { ICondition, IDay } from '.';
 
 import dayjs from 'dayjs';
+import { ArrowDown, ArrowUp } from 'phosphor-react';
 
 interface IDayCard {
   Day: string;
@@ -19,7 +20,7 @@ export default function DayCard({ Day, Condition, Temp }: IDayCard) {
   const isCurrentDay = dayjs(Day).isSame(today);
 
   return (
-    <div className="flex flex-col justify-between w-full max-w-[100px] h-[177px] bg-[#1E213A] p-2 rounded-lg m-auto">
+    <div className="flex flex-col justify-between w-[120px] h-[177px] bg-[#1E213A] p-2 rounded-lg m-auto">
       <span className="text-sm text-center text-[#E7E7EB]">
         {isCurrentDay ? 'Today' : dayAndMonth}
       </span>
@@ -32,8 +33,14 @@ export default function DayCard({ Day, Condition, Temp }: IDayCard) {
         />
       </div>
       <div className="flex mx-auto gap-4">
-        <span className="text-base text-[#E7E7EB]">{Temp.maxtemp_c}</span>
-        <span className="text-base text-[#A09FB1]">{Temp.mintemp_c}</span>
+        <span className="flex text-base items-center text-[#E7E7EB]">
+          <ArrowUp size={12} color="#fafafa" weight="bold" />
+          {Temp.maxtemp_c.toFixed(0)}°C
+        </span>
+        <span className="flex text-base items-center text-[#A09FB1]">
+          <ArrowDown size={12} color="#A09FB1" weight="bold" />
+          {Temp.mintemp_c.toFixed(0)}°C
+        </span>
       </div>
     </div>
   );
