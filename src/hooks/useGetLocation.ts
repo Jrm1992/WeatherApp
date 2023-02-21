@@ -11,7 +11,7 @@ export function useGetLocation() {
     );
   };
 
-  const errorCallback = (error) => {
+  const errorCallback = (error: any) => {
     console.log(error);
   };
 
