@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export function useGetLocation() {
   const [currentLocation, setCurrentLocation] = useState('');
@@ -15,7 +15,9 @@ export function useGetLocation() {
     console.log(error);
   };
 
-  navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+  }, []);
 
   return { currentLocation };
 }
