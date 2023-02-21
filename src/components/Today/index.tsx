@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 
-import { ICurrent, ILocation } from '../Forecast';
+import { IAlerts, ICurrent, ILocation, Forecast } from '../Forecast';
 
 import dayjs from 'dayjs';
 import { MapPin } from 'phosphor-react';
@@ -11,6 +11,8 @@ interface ITodayData {
     | {
         location: ILocation;
         current: ICurrent;
+        forecast: Forecast;
+        alerts: IAlerts;
       }
     | undefined;
 }
@@ -19,7 +21,7 @@ export default function Today({ TodayData }: ITodayData) {
   const parseDate = dayjs(TodayData?.location.localtime);
   const dayAndMonth = parseDate.format('dddd • DD MMMM');
   return (
-    <div className="flex flex-col gap-10 w-96">
+    <div className="flex flex-col gap-10 w-96 bg-[#1E213A] rounded-lg p-4 pb-8 mt-12">
       <div className="flex justify-center">
         {TodayData && (
           <Image
@@ -36,7 +38,16 @@ export default function Today({ TodayData }: ITodayData) {
           <span className="text-6xl">°C</span>
         </span>
         <span className="text-sm mt-4">
-          Real feel: {TodayData?.current.feelslike_c.toFixed(0)}°C
+          Real feel:
+          <span className="text-lg">
+            {` ${TodayData?.current.feelslike_c.toFixed(0)}°C`}
+          </span>
+        </span>
+        <span className="text-sm mt-4">
+          UV index:
+          <span className="text-lg">
+            {` ${TodayData?.current.uv.toFixed(0)}`}
+          </span>
         </span>
       </div>
       <div className="font-bold text-4xl flex justify-center">

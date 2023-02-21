@@ -32,6 +32,10 @@ export default function DayCard({ Day, Condition, Temp }: IDayCard) {
           height={60}
         />
       </div>
+      <span className="text-xs mb-2 text-center mt-4">
+        Chance of rain: <br />
+        {Temp.daily_chance_of_rain}%
+      </span>
       <div className="flex mx-auto gap-4">
         <span className="flex text-base items-center text-[#E7E7EB]">
           <ArrowUp size={12} color="#fafafa" weight="bold" />

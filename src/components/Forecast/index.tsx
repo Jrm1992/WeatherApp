@@ -176,7 +176,7 @@ export default function Forecast({ Forecast }: IForecast) {
     ? (Forecast?.current.humidity / 100) * 250
     : '0';
   return (
-    <div className="flex flex-col gap-8 lg:mt-0 mt-20 mx-auto">
+    <div className="flex flex-col gap-8 lg:mt-12 mt-20 mx-auto">
       <div className="lg:flex lg:flex-row grid grid-cols-2 gap-4">
         {Forecast?.forecast.forecastday.map((item) => (
           <DayCard
@@ -187,7 +187,7 @@ export default function Forecast({ Forecast }: IForecast) {
           />
         ))}
       </div>
-      <div>
+      <div className="">
         <span>Today’s Hightlights</span>
         <div className="flex gap-10 lg:flex-row flex-col">
           <div className="flex flex-col items-center mt-8 bg-[#1E213A] rounded-lg w-full max-w-[400px] h-52 justify-between p-6 text-slate-50">
@@ -212,13 +212,13 @@ export default function Forecast({ Forecast }: IForecast) {
           </div>
         </div>
         <div className="flex gap-10 lg:flex-row flex-col">
-          <div className="flex flex-col items-center mt-8 bg-[#1E213A] rounded-lg w-full max-w-[400px] h-40 justify-between p-6 text-slate-50">
+          <div className="flex flex-col items-center mt-8 bg-[#1E213A] rounded-lg w-full max-w-[400px] h-52 justify-between pb-16 p-6 text-slate-50">
             <span>Visibility</span>
             <span className="text-6xl">
               {Forecast?.current.vis_km} <span className="text-4xl">km</span>
             </span>
           </div>
-          <div className="flex flex-col items-center mt-8 bg-[#1E213A] rounded-lg w-full max-w-[400px] h-40 justify-between p-6 text-slate-50">
+          <div className="flex flex-col items-center mt-8 bg-[#1E213A] rounded-lg w-full max-w-[400px] h-52 justify-between pb-16 p-6 text-slate-50">
             <span>Air Pressure</span>
             <span className="text-6xl">
               {Forecast?.current.pressure_mb}{' '}
