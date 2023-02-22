@@ -1,13 +1,13 @@
 <p align="center">
   <img src=".github/logo.png" width="250px" height="250px">
   <br />
-  ### WeatherApp
+  WeatherApp
 </p>
 
-<p align="center">
-  #### A simple app to show weather conditions 
+<center>
+   A simple app to show weather conditions 
   <br />
-</p>
+</center>
 
 <p align="center">
   <img src=".github/layout.png">
