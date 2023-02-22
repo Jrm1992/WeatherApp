@@ -190,14 +190,14 @@ export default function Forecast({ Forecast }: IForecast) {
       <div className="">
         <span>Today’s Hightlights</span>
         <div className="flex gap-10 lg:flex-row flex-col">
-          <div className="flex flex-col items-center mt-8 bg-[#1E213A] rounded-lg w-full max-w-[400px] h-52 justify-between p-6 text-slate-50">
+          <div className="flex flex-col items-center mt-8 bg-[#1E213A85] rounded-lg w-full max-w-[400px] h-52 justify-between p-6 text-slate-50">
             <span>Wind status</span>
             <span className="text-7xl">
               {Forecast?.current.wind_kph} <span className="text-4xl">kph</span>
             </span>
             <span>{Forecast?.current.wind_dir}</span>
           </div>
-          <div className="flex flex-col items-center mt-8 bg-[#1E213A] rounded-lg w-full max-w-[400px] h-52 justify-between p-6 text-slate-50">
+          <div className="flex flex-col items-center mt-8 bg-[#1E213A85] rounded-lg w-full max-w-[400px] h-52 justify-between p-6 text-slate-50">
             <span>Humidity</span>
             <span className="text-7xl">
               {Forecast?.current.humidity}
@@ -212,13 +212,13 @@ export default function Forecast({ Forecast }: IForecast) {
           </div>
         </div>
         <div className="flex gap-10 lg:flex-row flex-col">
-          <div className="flex flex-col items-center mt-8 bg-[#1E213A] rounded-lg w-full max-w-[400px] h-52 justify-between pb-16 p-6 text-slate-50">
+          <div className="flex flex-col items-center mt-8 bg-[#1E213A85] rounded-lg w-full max-w-[400px] h-52 justify-between pb-16 p-6 text-slate-50">
             <span>Visibility</span>
             <span className="text-6xl">
               {Forecast?.current.vis_km} <span className="text-4xl">km</span>
             </span>
           </div>
-          <div className="flex flex-col items-center mt-8 bg-[#1E213A] rounded-lg w-full max-w-[400px] h-52 justify-between pb-16 p-6 text-slate-50">
+          <div className="flex flex-col items-center mt-8 bg-[#1E213A85] rounded-lg w-full max-w-[400px] h-52 justify-between pb-16 p-6 text-slate-50">
             <span>Air Pressure</span>
             <span className="text-6xl">
               {Forecast?.current.pressure_mb}{' '}

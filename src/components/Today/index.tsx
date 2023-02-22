@@ -21,7 +21,7 @@ export default function Today({ TodayData }: ITodayData) {
   const parseDate = dayjs(TodayData?.location.localtime);
   const dayAndMonth = parseDate.format('dddd • DD MMMM');
   return (
-    <div className="flex flex-col gap-10 w-96 bg-[#1E213A] rounded-lg p-4 pb-8 mt-12">
+    <div className="flex flex-col gap-10 w-96 bg-[#1E213A85] rounded-lg p-4 pb-8 mt-12">
       <div className="flex justify-center">
         {TodayData && (
           <Image
@@ -50,7 +50,7 @@ export default function Today({ TodayData }: ITodayData) {
           </span>
         </span>
       </div>
-      <div className="font-bold text-4xl flex justify-center">
+      <div className="font-bold text-4xl flex text-center justify-center">
         {TodayData?.current.condition.text}
       </div>
       <div className="flex flex-col justify-center text-lg gap-8">
