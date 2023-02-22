@@ -1,5 +1,5 @@
 <p align="center">
-  <img src=".github/logo.png">
+  <img src=".github/logo.png" width="250px" height="250px">
   <br />
   ### WeatherApp
 </p>
@@ -26,6 +26,7 @@
 
 To clone and run this application, you'll need Git and Node.js (which comes with npm) installed on your computer. From your command line:
 
+```
 # Clone this repository
 $ git clone https://github.com/Jrm1992/WeatherApp.git
 
@@ -37,6 +38,7 @@ $ npm install
 
 # Run the app
 $ npm run dev
+```
 
 
 
