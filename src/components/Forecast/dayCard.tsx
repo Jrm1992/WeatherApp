@@ -20,7 +20,7 @@ export default function DayCard({ Day, Condition, Temp }: IDayCard) {
   const isCurrentDay = dayjs(Day).isSame(today);
 
   return (
-    <div className="flex flex-col justify-between w-[120px] h-[177px] bg-[#1E213A85] p-2 rounded-lg m-auto">
+    <div className="flex flex-col justify-between lg:w-[120px] w-[160px] h-[177px] bg-[#1E213A85] p-2 rounded-lg m-auto">
       <span className="text-sm text-center text-[#E7E7EB]">
         {isCurrentDay ? 'Today' : dayAndMonth}
       </span>

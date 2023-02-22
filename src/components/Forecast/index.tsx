@@ -205,7 +205,7 @@ export default function Forecast({ Forecast }: IForecast) {
             </span>
             <div className="w-[250px] h-2 bg-white rounded">
               <div
-                className={` h-2 bg-yellow-600 rounded`}
+                className={` h-2 bg-blue-500 rounded`}
                 style={{ width: humidityPercentage }}
               />
             </div>

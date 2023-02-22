@@ -20,7 +20,7 @@ export default function RootLayout({
       */}
       <head />
       <body>
-        <main className="bg-zinc-700 flex w-full h-full lg:h-[100vh]">
+        <main className="bg-gray-900 flex w-full h-full lg:h-[100vh]">
           <Suspense fallback={<Loading />} />
           {children}
         </main>
