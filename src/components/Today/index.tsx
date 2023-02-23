@@ -1,8 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 
-import { IAlerts, ICurrent, ILocation, Forecast } from '../Forecast';
-
+import { Forecast, IAlerts, ICurrent, ILocation } from '@/@types/weatherData';
 import dayjs from 'dayjs';
 import { MapPin } from 'phosphor-react';
 

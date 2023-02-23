@@ -1,8 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 
-import { ICondition, IDay } from '.';
-
+import { ICondition, IDay } from '@/@types/weatherData';
 import dayjs from 'dayjs';
 import { ArrowDown, ArrowUp } from 'phosphor-react';
 
